@@ -1,3 +1,19 @@
+
+# NEURAL NETWORK FROM SCRATCH
+Neural_network_from_scratch
+
+## Commands using -
+
+### To create any empty file using git bash -
 ```
-NEURAL NETWORK FROM SCRATCH
+touch filename
 ```
+### To create an environment
+```
+conda create -p ./env python=3.7 -y
+```
+### To activate the environment
+```
+conda activate ./env
+```
+
