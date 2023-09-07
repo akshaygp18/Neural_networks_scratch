@@ -1,3 +1,3 @@
-```
+
 NEURAL NETWORK FROM SCRATCH
-```
+
