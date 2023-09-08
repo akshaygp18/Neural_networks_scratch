@@ -13,11 +13,28 @@ class dense_layer:
     def forward(self,inputs):
         self.output = np.dot(inputs,self.weights) + self.biases
 
+
+
+class Activation_Relu:
+    def forward(self,inputs):
+        self.output = np.maximum(0,inputs)
+
+
+
+
 layer1 = dense_layer(4,5)
-layer2 = dense_layer(5,2)
+activation1 = Activation_Relu()
 
 layer1.forward(x)
-print(layer1.output)
 
-layer2.forward(layer1.output)
-print(layer2.output)
+print(layer1.biases)
+print("-----------------------------")
+print(layer1.weights)
+print("-----------------------------")
+print(layer1.output)
+print("-----------------------------")
+activation1.forward(layer1.output)
+#print(activation1.biases)
+#print(activation1.weights)
+print(activation1.output)
+print("-----------------------------")
