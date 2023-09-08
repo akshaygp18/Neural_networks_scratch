@@ -20,19 +20,12 @@ conda activate ./env
 
 ### Importing the numpy package
 ```
-Import numpy as np
+import numpy as np
 ```
-
-### Initializing random numbers for the weights
+### Importing the nnfs package and datasets
 ```
-np.random.seed(0)
-```
-
-### Initializing inputs 
-```
-x = [[1,2,1.6,2.5],
-     [2,5,-2.5,-1.5],
-     [-1.9,1.7,-2.2,1.0]]
+import nnfs
+from nnfs.datasets import spiral_data
 ```
 
 ### Created the dense_layer class
@@ -51,5 +44,13 @@ class dense_layer:
 class Activation_Relu:
     def forward(self,inputs):
         self.output = np.maximum(0,inputs)
+```
+
+### Created the activation_softmax class
+```
+def forward(self,inputs):
+        exp_values = np.exp(inputs - np.max(inputs,axis=1,keepdims=True))
+        probabilities = exp_values / np.sum(exp_values, axis=1, keepdims=True)
+        self.output = probabilities
 ```
 
